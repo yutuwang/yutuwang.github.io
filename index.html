@@ -1,194 +1,117 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>御图网 - 超清壁纸下载</title>
-    <meta name="keywords" content="御图网,御图网官网,御图网取图,御图网APP,">
-    <meta name="description" content="御图网是一个提供4k超清壁纸下载的网站，包括4k超清电脑壁纸、手机壁纸、动漫壁纸、美女壁纸等。">
-    <meta name="description" content="Your all-in-one embeddable tools platform. Enhance your website with powerful features through simple iframe integration.">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"></script>
-    <link rel="canonical" href="https://www.iframe.app/">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="御图网,御图网官网,御图网取图,御图网APP,">
+  <meta name="description" content="御图网是一个提供4k超清壁纸下载的网站，包括4k超清电脑壁纸、手机壁纸、动漫壁纸、美女壁纸等。">
+  <title>御图网 - 超清壁纸下载</title>
 <!-- 统计 -->
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    <script>LA.init({id:"KRtMiliwWQtTrKl5",ck:"KRtMiliwWQtTrKl5"})</script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"KYfKyxpS8Z96bm4O",ck:"KYfKyxpS8Z96bm4O"})</script>
 
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('https://img.imdodo.com/dodo/e0df8927fb8085bf7835386a035663de.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+  .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+  .glowing-button {
+      display: inline-block;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      /* background-color: #fcfdfc; */
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(2, 100, 5, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+  .glowing-button:hover {
+      background-color: #45a049;
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
+
+  .glowing-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.5s ease;
+      z-index: -1;
+    }
+
+  .glowing-button:hover::before {
+      left: 100%;
+    }
+
+  .loading-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: loading 1s linear infinite;
+    }
+
+    @keyframes loading {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 600px) {
+    .glowing-button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <canvas id="background-animation"></canvas>
-    <div class="content">
-        <div class="hero">
-            <p><img src="https://img.imdodo.com/dodo/2b43aa3d13bde134a8647d6c19afe218.png" style="width: 140px;"></p>
-            <h1 class="logo"><a href="http://xiaobaoxia.com/" title="Embed Fast, Launch Website Faster">御图网</a></h1>
-            <!-- <p class="slogan">循此苦旅，以达繁星</p> -->
-             <br>
-            <p class="coming-soon">微信公众号：桂木动漫</p>
-            <br>
-            <p class="description">
-                4k超清壁纸资源下载
-            </p>
-            <br>
-            <div class="button-container">
-                <a href="https://www.yuque.com/xbxbot/yutu" class="glowing-button">壁纸下载</a>
-                <a href="https://www.yuque.com/xbxbot/pic" class="glowing-button">写真套图</a>
-                <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=1822152096792494083#wechat_redirect" class="glowing-button">#电脑壁纸</a>
-                <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=1822153837948747781#wechat_redirect" class="glowing-button">#动漫壁纸</a>
-                <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=2373561210425589763#wechat_redirect" class="glowing-button">#美女壁纸</a>
-              
-            </div>
-    
-            <div class="features">
-          
-            </div> 
-        </div>
-
-
-
-        <div class="details">
-            
-            <div class="section">
-                <h2>图片合集</h2>
-                <div class="cards">
-                    <div class="card">
-                        <h3><i data-feather="camera"></i>
-                            <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3127314562254569476#wechat_redirect" style="text-decoration: none;">
-                          OOTD</a></h3>
-                        <p>分享美女日常穿搭.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="heart"></i> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3199773305482969089#wechat_redirect" style="text-decoration: none;">
-                            COS图集</a></h3>
-                        <p>美女cosplay图集分享.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="edit"></i><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3114223108007329797#wechat_redirect" style="text-decoration: none;">
-                            动漫图集</a></h3>
-                        <p>动漫壁纸图集分享.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><i data-feather="aperture"></i><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3178780336063971334#wechat_redirect" style="text-decoration: none;">
-                            头像合集</a></h3>
-                        <p>男生头像 动漫头像 女生头像等.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><i data-feather="layout"></i><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3411015273057517570#wechat_redirect" style="text-decoration: none;">
-                            番剧推荐</a></h3>
-                        <p>好看的番剧推荐.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><i data-feather="book-open"></i><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=3415300904571011074#wechat_redirect" style="text-decoration: none;">
-                            表情包</a></h3>
-                        <p>动漫表情包、搞笑表情包.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>更多推荐</h2>
-                <div class="cards">
-                    <div class="card">
-                        <h3><i data-feather="clock"></i><a href="http://xiaobaoxia.com/" style="text-decoration: none;">
-                            小爆虾导航</a></h3>
-                        <p>动漫、漫画等网站资源导航.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="refresh-cw"></i><a href="https://www.yuque.com/xbxbot/apk" style="text-decoration: none;">
-                            软件库</a></h3>
-                        <p>各种黑科技软件、去广告纯净版软件.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="users"></i><a href="https://www.yuque.com/xbxbot/sup458" style="text-decoration: none;">
-                            网站源码</a></h3>
-                        <p>HTML网站源代码收集.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="trending-up"></i><a href="https://www.yuque.com/xbxbot/fuye" style="text-decoration: none;">
-                            副业</a></h3>
-                        <p>副业项目以及日常思考记录.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="zap"></i><a href="https://flowus.cn/share/c62fd3f6-454d-4990-8250-d3ea893f3c73?code=BHPCZX" style="text-decoration: none;">
-                            公考资料</a></h3>
-                        <p>国考省考事业单位资料.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i data-feather="dollar-sign"></i><a href="https://www.yuque.com/xbxbot/ai" style="text-decoration: none;">
-                            AI绘画</a></h3>
-                        <p>stable diffusion入门技巧以及AI绘画模型lora.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <footer class="footer">
-           <div class="footer-links">
-               <a href="https://github.com/qiayue/iframe.app" target="_blank" rel="noopener noreferrer">
-                   <i data-feather="github"></i>
-                   GitHub
-               </a>
-           </div>
-           <div class="footer-text">
-               © 2024 <a href="https://www.iframe.app/">iframe.app</a>. All rights reserved.
-           </div>
-           <div class="footer-slogan">
-               Embed Fast, Launch Website Faster
-           </div>
-        </footer>
-    </div>
-
-    <script>
-        feather.replace();
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({
-            canvas: document.getElementById('background-animation'),
-            antialias: true
-        });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 1000;
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 5;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.005,
-            color: '#00ffcc'
-        });
-
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        camera.position.z = 3;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
-    <script defer data-domain="www.iframe.app" src="https://click.pageview.click/js/script.js"></script>
-    <script type="text/javascript" src="https://server.listyes.com/track/t.o.js?v=24102622"></script>
+  <h1>御图网</h1>
+<br>
+  <div class="button-container">
+    <a href="https://www.yuque.com/xbxbot/yutu" class="glowing-button">壁纸下载</a>
+    <a href="https://pan.quark.cn/s/1d9a71f7f3db" class="glowing-button">御图网APP</a>
+    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyMDY5MzUwMw==&action=getalbum&album_id=1822152096792494083#wechat_redirect" class="glowing-button">#电脑壁纸</a>
+  
+ 
+  </div>
 </body>
+
 </html>
